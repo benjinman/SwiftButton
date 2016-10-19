@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private var count: Int = 0
+    @IBOutlet weak var countLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func printHelloWorld(_ sender: AnyObject) {
+        print("Hello World")
+        self.count += 1
+        let newLabelText = "Count: \(self.count)"
+        self.countLabel.text = newLabelText
+    }
 
 }
 
